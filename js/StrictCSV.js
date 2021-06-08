@@ -6,12 +6,20 @@ class StrictCSV {
     return this.encode(this.fromJSON(json));
   }
   static fetch = async (url) => {
-    const txt = await (await fetch(url)).text();
-    return this.parse(txt);
+    try {
+      const txt = await (await fetch(url)).text();
+      return this.parse(txt);
+    } catch (e) {
+    }
+    return null;
   }
   static load = async (fn) => {
-    const txt = await Deno.readTextFile(fn);
-    return this.parse(txt);
+    try {
+      const txt = await Deno.readTextFile(fn);
+      return this.parse(txt);
+    } catch (e) {
+    }
+    return null;
   }
   // util
   static addBOM(s) {
