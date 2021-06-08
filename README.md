@@ -1,6 +1,6 @@
 # StrictCSV *.s.csv
 
-StrictCSV is a strict CSV format
+StrictCSV is a strict CSV format (厳格なCSVフォーマット)
 
 ## usage 使い方
 
