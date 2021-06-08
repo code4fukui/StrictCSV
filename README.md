@@ -1,4 +1,4 @@
-# StrictCSV *.s.csv
+# StrictCSV (*.s.csv)
 
 StrictCSV is a strict CSV format (厳格なCSVフォーマット)
 
@@ -20,6 +20,7 @@ console.log(data2);
 
 ### 書式
 
+- 拡張子は .s.csv
 - 文字コードはBOM付きUTF-8
 - 改行コードはLF
 - ヘッダー行は必須
@@ -29,6 +30,7 @@ console.log(data2);
 
 ### format
 
+- extension is .s.csv
 - character encoding is UTF-8 with BOM
 - newline code is LF
 - header line is required
