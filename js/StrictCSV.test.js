@@ -2,7 +2,7 @@ import * as t from "https://deno.land/std/testing/asserts.ts";
 import { StrictCSV } from "./StrictCSV.js";
 
 Deno.test("parse", async () => {
-  const s = StrictCSV.parse(await Deno.readTextFile("test.s.csv"));
+  const s = StrictCSV.parse(await Deno.readTextFile("../test.s.csv"));
   const chk = [
     { code: "1", name: "abc", category: "a" },
     { code: "2", name: "def", category: "a" },
@@ -21,7 +21,7 @@ Deno.test("stringify", async () => {
     { code: "5", name: "mno", category: "b" },
   ];
   const chk = StrictCSV.stringify(json);
-  const s = StrictCSV.addBOM(await Deno.readTextFile("test.s.csv"));
+  const s = StrictCSV.addBOM(await Deno.readTextFile("../test.s.csv"));
   t.assertEquals(s, chk);
 });
 Deno.test("too long data", async () => {
