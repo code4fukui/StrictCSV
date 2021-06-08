@@ -1,13 +1,13 @@
 # StrictCSV *.s.csv
 
-StrictCSV is the stricted CSV format
+StrictCSV is a strict CSV format
 
 ## usage 使い方
 
 ```js
 import { StrictCSV } from "https://code4fukui.github.io/StrictCSV/js/StrictCSV.js";
 
-const data = await StrictCSV.load("test.s.csv");
+const data = await StrictCSV.load("test.s.csv") || [{ name: "a", val: 1 }, { name: "b", val: 1 }];
 
 const s = StrictCSV.stringify(data);
 console.log(s);
@@ -20,19 +20,21 @@ console.log(data2);
 
 ### 書式
 
-- 文字コードはBOM付きUTF-8)
-- 改行コードはLF)
-- ヘッダー行は必須)
-- レコード0件を許容)
-- CSVと同様のダブルクォートエスケープ)
+- 文字コードはBOM付きUTF-8
+- 改行コードはLF
+- ヘッダー行は必須
+- レコード0件を許容する
+- ダブルクォート、コンマ、改行を含める場合はダブルクォートで囲む（ダブルクォートは2つにする）
+- 存在しないフィールドは前行以前に存在したフィールドが省略されたものとする
 
 ### format
 
-- charset is UTF-8 with BOM
+- character encoding is UTF-8 with BOM
 - newline code is LF
-- must have header line
-- accept no records
-- escape with double quote same as CSV
+- header line is required
+- allow no records
+- use double quotes to include commas, line breaks and double quotes (double double quote)
+- field that doesn't exist is assumed to be an omitted field that existed before the previous line
 
 ## ABNF
 
@@ -50,3 +52,8 @@ LF = %x0A
 TEXTDATA = %x20-21 / %x23-2B / %x2D-D7FF / %xE000-10FFFF
 BOM = %xFEFF
 ```
+
+## reference
+
+- [blog by Taisuke Fukuno](https://fukuno.jig.jp/3240)
+- [rfc4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://datatracker.ietf.org/doc/html/rfc4180)
