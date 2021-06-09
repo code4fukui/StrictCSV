@@ -26,7 +26,7 @@ console.log(data2);
 - ヘッダー行は必須
 - レコード0件を許容する
 - ダブルクォート、コンマ、改行を含める場合はダブルクォートで囲む（ダブルクォートは2つにする）
-- 存在しないフィールドは前行以前に存在したフィールドが省略されたものとする
+- 存在しないフィールドは前行以前に存在したフィールドが省略されたものとする (CSV非互換)
 
 ### format
 
@@ -36,7 +36,7 @@ console.log(data2);
 - header line is required
 - allow no records
 - use double quotes to include commas, line breaks and double quotes (double double quote)
-- field that doesn't exist is assumed to be an omitted field that existed before the previous line
+- field that doesn't exist is assumed to be an omitted field that existed before the previous line (not compatible CSV)
 
 ## ABNF
 
