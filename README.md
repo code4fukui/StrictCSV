@@ -1,5 +1,7 @@
 # StrictCSV (*.s.csv)
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 StrictCSV is a strict CSV format.
 
 ## Usage
