@@ -54,4 +54,4 @@ BOM = %xFEFF
 
 ## License
 
-MIT
+MIT License
